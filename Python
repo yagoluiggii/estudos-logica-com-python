@@ -1,0 +1,38 @@
+import os
+from exercicios.calculadora import executar_calculadora
+from exercicios.maioridade import executar_maioridade
+
+def limpar_tela():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+def exibir_menu():
+    print("========================================")
+    print("    ESTUDOS DE LÓGICA EM PYTHON")
+    print("========================================")
+    print("1. Executar Calculadora Simples")
+    print("2. Verificar Maioridade")
+    print("0. Sair")
+    print("========================================")
+
+def main():
+    while True:
+        exibir_menu()
+        opcao = input("Escolha uma opção: ").strip()
+
+        if opcao == "1":
+            executar_calculadora()
+            input("\nPressione Enter para voltar ao menu...")
+        elif opcao == "2":
+            executar_maioridade()
+            input("\nPressione Enter para voltar ao menu...")
+        elif opcao == "0":
+            print("\nEncerrando o programa. Bons estudos!")
+            break
+        else:
+            print("\n Opção inválida! Tente novamente.")
+            input("\nPressione Enter para continuar...")
+        
+        limpar_tela()
+
+if __name__ == "__main__":
+    main()
